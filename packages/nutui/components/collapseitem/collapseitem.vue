@@ -50,7 +50,7 @@ watch(
 // #endif
 
 async function getRectHeight() {
-  const rect = await getRect(target) as any
+  const rect = (await getRect(target)) as any
   return rect.height as string
 }
 
@@ -128,6 +128,7 @@ export default defineComponent({
     <view
       class="nut-collapse-item__title"
       :class="[{ 'nut-collapse-item__title--disabled': disabled }]"
+      :style="itemStyle"
       @click="handleClick"
     >
       <view class="nut-collapse-item__title-main">

@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes, PropType, StyleValue } from 'vue'
 import { commonProps, makeNumericProp, makeRequiredProp, makeStringProp, truthProp } from '../_utils'
 
 export const collapseitemProps = {
@@ -44,6 +44,11 @@ export const collapseitemProps = {
    * @description 点击折叠和展开的旋转角度，在自定义图标模式下生效
    */
   rotate: makeNumericProp(180),
+
+  itemStyle: {
+    type: [String, Object, Array] as PropType<StyleValue>,
+    default: '',
+  },
 }
 
 export type CollapseItemProps = ExtractPropTypes<typeof collapseitemProps>
